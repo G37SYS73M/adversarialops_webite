@@ -100,7 +100,7 @@
 
             draw() {
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 4, false);
                 ctx.fillStyle = this.color;
                 ctx.fill();
             }
@@ -133,10 +133,10 @@
             const numberOfParticles = (canvas.width * canvas.height) / 8000;
             for (let i = 0; i < numberOfParticles; i++) {
                 const size = Math.random() * 2 + 1;
-                const x = Math.random() * (canvas.width - size * 2) + size * 2;
-                const y = Math.random() * (canvas.height - size * 2) + size * 2;
-                const directionX = (Math.random() * 2) - 1;
-                const directionY = (Math.random() * 2) - 1;
+                const x = Math.random() * (canvas.width - size * 4) + size * 4;
+                const y = Math.random() * (canvas.height - size * 4) + size * 4;
+                const directionX = (Math.random() * 4) - 1;
+                const directionY = (Math.random() * 4) - 1;
                 const color = '#00ff00';
 
                 particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
