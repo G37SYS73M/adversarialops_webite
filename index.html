@@ -1,206 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            height: 100vh;
-            background: black;
-            color: #00ff00;
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin: 0;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin: 15px 0;
-        }
-
-        .timer {
-            font-size: 2rem;
-            margin: 20px 0;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .social-icons a {
-            color: #00ff00;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: #ffeb3b;
-        }
-
-        canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adversarial Operations Security Consulting</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- You can add any additional meta tags or external libraries here -->
 </head>
 <body>
-    <div>
-        <h1>Coming Soon</h1>
-        <p>Stay tuned for something amazing!</p>
-        <div class="timer" id="timer">00:00:00</div>
+  <header>
+    <div class="container">
+      <h1>Adversarial Operations Security Consulting</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
     </div>
-
-    <canvas id="background"></canvas>
-
-    <script>
-        const canvas = document.getElementById('background');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const particlesArray = [];
-        const mouse = {
-            x: null,
-            y: null,
-            radius: 100
-        };
-
-        window.addEventListener('mousemove', (event) => {
-            mouse.x = event.x;
-            mouse.y = event.y;
-        });
-
-        class Particle {
-            constructor(x, y, directionX, directionY, size, color) {
-                this.x = x;
-                this.y = y;
-                this.directionX = directionX;
-                this.directionY = directionY;
-                this.size = size;
-                this.color = color;
-            }
-
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                ctx.fillStyle = this.color;
-                ctx.fill();
-            }
-
-            update() {
-                if (this.x > canvas.width || this.x < 0) {
-                    this.directionX = -this.directionX;
-                }
-                if (this.y > canvas.height || this.y < 0) {
-                    this.directionY = -this.directionY;
-                }
-
-                // Collision detection with mouse
-                const dx = mouse.x - this.x;
-                const dy = mouse.y - this.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < mouse.radius) {
-                    this.directionX = -this.directionX;
-                    this.directionY = -this.directionY;
-                }
-
-                this.x += this.directionX;
-                this.y += this.directionY;
-                this.draw();
-            }
-        }
-
-        function init() {
-            particlesArray.length = 0;
-            const numberOfParticles = (canvas.width * canvas.height) / 8000;
-            for (let i = 0; i < numberOfParticles; i++) {
-                const size = Math.random() * 2 + 1;
-                const x = Math.random() * (canvas.width - size * 4) + size * 4;
-                const y = Math.random() * (canvas.height - size * 4) + size * 4;
-                const directionX = (Math.random() * 4) - 1;
-                const directionY = (Math.random() * 4) - 1;
-                const color = '#00ff00';
-
-                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            particlesArray.forEach(particle => {
-                particle.update();
-            });
-
-            connectParticles();
-            requestAnimationFrame(animate);
-        }
-
-        function connectParticles() {
-            for (let a = 0; a < particlesArray.length; a++) {
-                for (let b = a; b < particlesArray.length; b++) {
-                    const distance = ((particlesArray[a].x - particlesArray[b].x) ** 2) + 
-                                     ((particlesArray[a].y - particlesArray[b].y) ** 2);
-                    if (distance < 9000) {
-                        ctx.strokeStyle = 'rgba(0, 255, 0, 0.1)';
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            init();
-        });
-
-        init();
-        animate();
-
-        // Simple countdown timer
-        const targetDate = new Date().getTime() + 30 * 24 * 60 * 60 * 1000; // 7 days from now
-
-        function updateTimer() {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-
-            if (distance > 0) {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById("timer").innerText =
-                    `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            } else {
-                document.getElementById("timer").innerText = "We're live!";
-            }
-        }
-
-        setInterval(updateTimer, 1000);
-    </script>
+  </header>
+  
+  <section class="hero">
+    <div class="container">
+      <h2>Excellence in Offensive Security Practices</h2>
+      <p>Our team of industry-leading consultants, all OSCP, OSED, CRTP, CARTP, and CISA certified, is dedicated to delivering complete engagements that empower your organization with robust security postures.</p>
+      <a href="contact.html" class="btn">Get In Touch</a>
+    </div>
+  </section>
+  
+  <section class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service-item">
+          <h3>Red Team Engagement</h3>
+          <p>Simulated adversary attacks to test and improve your security posture.</p>
+        </div>
+        <div class="service-item">
+          <h3>Adversary Simulation & Emulation</h3>
+          <p>Replicate real-world threats to evaluate your defenses.</p>
+        </div>
+        <div class="service-item">
+          <h3>Ransomware Simulation</h3>
+          <p>Safe simulation exercises to prepare your response strategy.</p>
+        </div>
+        <div class="service-item">
+          <h3>Web, API & Mobile Pentesting</h3>
+          <p>Thorough analysis and penetration testing across digital platforms.</p>
+        </div>
+        <div class="service-item">
+          <h3>Thick Client Pentesting & Reverse Engineering</h3>
+          <p>Identifying weaknesses in desktop and proprietary applications.</p>
+        </div>
+        <div class="service-item">
+          <h3>IS Audits</h3>
+          <p>In-depth security audits ensure your IT systems meet industry standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>At Adversarial Operations Security Consulting, we combine our extensive experience and certifications with cutting-edge techniques to deliver actionable, industry-leading reports and recommendations. Our passion for excellence and client-focused approach ensures that you receive not only the best in ethical offensive security practices but also the strategic insights required to strengthen your defenses.</p>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Adversarial Operations Security Consulting. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
