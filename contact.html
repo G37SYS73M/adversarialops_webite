@@ -1,53 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Us - Adversarial Operations Security Consulting</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <div class="container">
-      <h1>Adversarial Operations Security Consulting</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="contact.html" class="active">Contact Us</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  
-  <section class="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <p>For inquiries, consultation requests, or to discuss your security needs, please fill out the form below or reach out directly.</p>
-      <form action="https://formspree.io/f/{your-id}" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required placeholder="Your Name">
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="_replyto" required placeholder="Your Email">
-        
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required placeholder="Your message"></textarea>
-        
-        <button type="submit">Submit</button>
-      </form>
-      <div class="contact-details">
-        <h3>Other Ways to Contact</h3>
-        <p>Email: info@adversarialops.com</p>
-        <p>Phone: +91 9907078158</p>
-        <p>Address: WB, India</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — Adversarial Ops</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="index.html"><span class="logo">AO</span><span class="brand-name">Adversarial Ops</span></a>
+        <nav class="nav">
+          <a href="index.html#mission">Mission</a>
+          <a href="index.html#services">What We Do</a>
+          <a href="#help">Get Help</a>
+          <a href="#volunteer">Become an Operator</a>
+          <a href="index.html#faq">FAQ</a>
+        </nav>
+        <a class="btn" href="mailto:help@adversarialops.org?subject=Help%20Request">Email</a>
       </div>
-    </div>
-  </section>
-  
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Adversarial Operations Security Consulting. All rights reserved.</p>
-    </div>
-  </footer>
-</body>
+    </header>
+
+    <main class="section">
+      <div class="wrap two-col">
+        <section id="help">
+          <h1>Get help</h1>
+          <p class="muted">For urgent threats to life/safety, contact local authorities first.</p>
+          <div class="card">
+            <form onsubmit="event.preventDefault(); alert('Thanks! This demo form does not send data. Replace with your form backend.');">
+              <label>Name<input required placeholder="Your name"/></label>
+              <label>Email<input type="email" required placeholder="you@example.com"/></label>
+              <label>What happened?<textarea required rows="6" placeholder="Briefly describe the issue. Avoid passwords or sensitive IDs."></textarea></label>
+              <label>Urgency
+                <select>
+                  <option>Low</option><option>Medium</option><option>High</option><option>Critical</option>
+                </select>
+              </label>
+              <label class="checkbox"><input type="checkbox" required/> I consent to Adversarial Ops processing the information I provide to respond to my request.</label>
+              <button class="btn primary full">Submit</button>
+            </form>
+          </div>
+        </section>
+
+        <section id="volunteer">
+          <h2>Become an Operator (volunteer)</h2>
+          <div class="card">
+            <form onsubmit="event.preventDefault(); alert('Thanks! Replace with your onboarding workflow.');">
+              <label>Name<input required placeholder="Your name"/></label>
+              <label>Email<input type="email" required placeholder="you@example.com"/></label>
+              <label>Skills / Interests<textarea rows="4" placeholder="IR, DFIR, OSINT, AppSec, Cloud, Policy, Comms, Local language support, etc."></textarea></label>
+              <label>Availability
+                <select>
+                  <option>2–3 hrs / week</option><option>4–6 hrs / week</option><option>On‑call (rota)</option>
+                </select>
+              </label>
+              <button class="btn full">Apply</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap foot-grid">
+        <div class="brand mini"><span class="logo">AO</span><span class="brand-name">Adversarial Ops</span></div>
+        <p class="muted sm">© <span id="year"></span> Adversarial Ops</p>
+      </div>
+      <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+    </footer>
+  </body>
 </html>

@@ -1,76 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Adversarial Operations Security Consulting</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- You can add any additional meta tags or external libraries here -->
-</head>
-<body>
-  <header>
-    <div class="container">
-      <h1>Adversarial Operations Security Consulting</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  
-  <section class="hero">
-    <div class="container">
-      <h2>Excellence in Offensive Security Practices</h2>
-      <p>Our team of industry-leading consultants, all OSCP, OSED, CRTP, CARTP, and CISA certified, is dedicated to delivering complete engagements that empower your organization with robust security postures.</p>
-      <a href="contact.html" class="btn">Get In Touch</a>
-    </div>
-  </section>
-  
-  <section class="services">
-    <div class="container">
-      <h2>Our Services</h2>
-      <div class="service-grid">
-        <div class="service-item">
-          <h3>Red Team Engagement</h3>
-          <p>Simulated adversary attacks to test and improve your security posture.</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Adversarial Ops — Community Cybersecurity Help</title>
+    <meta name="description" content="Adversarial Ops is a volunteer-led, nonprofit initiative offering free, ethical cybersecurity help to people and organizations in need." />
+    <meta name="theme-color" content="#0B1220" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3EAO%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="style.css" />
+    <meta property="og:title" content="Adversarial Ops — Community Cybersecurity Help" />
+    <meta property="og:description" content="Volunteer Operators offering free, ethical cybersecurity help." />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="index.html"><span class="logo">AO</span><span class="brand-name">Adversarial Ops</span></a>
+        <nav class="nav">
+          <a href="#mission">Mission</a>
+          <a href="#services">What We Do</a>
+          <a href="contact.html">Get Help</a>
+          <a href="contact.html#volunteer">Become an Operator</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <a class="btn primary" href="contact.html#help">Report Incident</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <h1>Operators on call. <span class="accent">Free, ethical cybersecurity help</span> for anyone who needs it.</h1>
+          <p class="lede">Adversarial Ops is a volunteer-led nonprofit. We support victims of cyber fraud, assist with incident triage, responsible takedown requests, and education—always legal, always human-first.</p>
+          <div class="actions">
+            <a class="btn light" href="contact.html#help">Get help now</a>
+            <a class="btn ghost" href="contact.html#volunteer">Become an Operator</a>
+          </div>
+          <p class="note">We never hack back. We coordinate lawful responses, work with platforms/ISPs/LE where appropriate, and protect your privacy.</p>
         </div>
-        <div class="service-item">
-          <h3>Adversary Simulation & Emulation</h3>
-          <p>Replicate real-world threats to evaluate your defenses.</p>
+      </section>
+
+      <section id="mission" class="section">
+        <div class="wrap two-col">
+          <div>
+            <h2>Our mission</h2>
+            <p>Make practical cybersecurity help accessible to anyone—regardless of background or ability to pay. We mobilize trained volunteers (“Operators”) to provide clear guidance, triage incidents, and reduce harm.</p>
+            <ul class="bullets">
+              <li>Rapid, trauma‑aware support for victims of scams, account takeovers, doxxing, and data loss.</li>
+              <li>Lawful disruption: abuse reports, takedown requests, and coordination with providers &amp; CERTs.</li>
+              <li>Education: practical guides, workshops, and 1:1 hygiene tune‑ups.</li>
+            </ul>
+          </div>
+          <div class="card-grid">
+            <div class="card"><h3>Ethical &amp; legal</h3><p>No hack‑back. We follow the law and industry best practices.</p></div>
+            <div class="card"><h3>Privacy‑first</h3><p>Minimal data collection. We only keep what we must.</p></div>
+            <div class="card"><h3>Open &amp; transparent</h3><p>Public impact reports and budgets.</p></div>
+            <div class="card"><h3>Inclusive</h3><p>Help for anyone, anywhere, within scope.</p></div>
+          </div>
         </div>
-        <div class="service-item">
-          <h3>Ransomware Simulation</h3>
-          <p>Safe simulation exercises to prepare your response strategy.</p>
+      </section>
+
+      <section id="services" class="section alt">
+        <div class="wrap">
+          <h2>What we do</h2>
+          <div class="cards three">
+            <div class="card"><h3>Incident triage</h3><p>Account takeovers, malware, fraud, doxxing. We guide mitigation, evidence capture, and safe recovery steps.</p></div>
+            <div class="card"><h3>Lawful takedown coordination</h3><p>We file abuse reports, work with platforms/hosts/registrars, and escalate to CERTs/LE where appropriate.</p></div>
+            <div class="card"><h3>Education &amp; prevention</h3><p>Workshops, checklists, and 1:1 hardening to reduce future risk.</p></div>
+          </div>
         </div>
-        <div class="service-item">
-          <h3>Web, API & Mobile Pentesting</h3>
-          <p>Thorough analysis and penetration testing across digital platforms.</p>
+      </section>
+
+      <section id="faq" class="section">
+        <div class="wrap two-col">
+          <div>
+            <h2>Governance &amp; transparency</h2>
+            <p>Adversarial Ops is structured as a nonprofit. We will publish an annual impact report, budget, and board roster. Conflicts of interest are disclosed.</p>
+            <ul class="bullets small">
+              <li>Code of Conduct covering respect, privacy, and neutrality.</li>
+              <li>Intake &amp; case‑handling SOPs with audit trails.</li>
+              <li>Data retention policy with minimal collection and deletion by default.</li>
+            </ul>
+          </div>
+          <div class="faq card">
+            <details open>
+              <summary>Do you hack back or take down sites yourselves?</summary>
+              <p>No. We never conduct illegal activity. We coordinate lawful reports and work through proper channels.</p>
+            </details>
+            <details>
+              <summary>Is it really free?</summary>
+              <p>Yes. We are volunteer‑run. If you’re able, you can donate to help us scale operations (coming soon).</p>
+            </details>
+            <details>
+              <summary>How do you protect my data?</summary>
+              <p>We only collect necessary details to assist you, store them securely, and delete them when no longer needed.</p>
+            </details>
+          </div>
         </div>
-        <div class="service-item">
-          <h3>Thick Client Pentesting & Reverse Engineering</h3>
-          <p>Identifying weaknesses in desktop and proprietary applications.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap foot-grid">
+        <div>
+          <div class="brand mini"><span class="logo">AO</span><span class="brand-name">Adversarial Ops</span></div>
+          <p class="muted">Volunteer‑led, nonprofit cybersecurity help.</p>
+          <p class="muted sm">© <span id="year"></span> Adversarial Ops</p>
         </div>
-        <div class="service-item">
-          <h3>IS Audits</h3>
-          <p>In-depth security audits ensure your IT systems meet industry standards.</p>
+        <div>
+          <h4>Contact</h4>
+          <ul class="list">
+            <li><a href="mailto:contact@adversarialops.org">contact@adversarialops.org</a></li>
+            <li><a href="https://x.com/" target="_blank" rel="noreferrer">X / Twitter</a> · <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul class="list">
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Code of Conduct</a></li>
+            <li><a href="#">Imprint</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
-  
-  <section class="about">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>At Adversarial Operations Security Consulting, we combine our extensive experience and certifications with cutting-edge techniques to deliver actionable, industry-leading reports and recommendations. Our passion for excellence and client-focused approach ensures that you receive not only the best in ethical offensive security practices but also the strategic insights required to strengthen your defenses.</p>
-    </div>
-  </section>
-  
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Adversarial Operations Security Consulting. All rights reserved.</p>
-    </div>
-  </footer>
-</body>
+      <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+    </footer>
+  </body>
 </html>
